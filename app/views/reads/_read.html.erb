@@ -1,0 +1,24 @@
+<% if user_signed_in? %>
+  <% if article.reads.find_by(user_id: current_user.id) %>
+
+    <%= button_to article_read_path(article.id, article.reads.find_by(user_id: current_user.id).id), method: :delete, remote: true do %>
+
+      <p>いいね解除</p>
+      <span>
+        <%= article.reads.count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to article_reads_path(article.id),remote: true do %>
+      <p>いいね</p>
+      <span>
+        <%= article.reads.count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+<p>いいね</p>
+    <span>
+      <%= article.reads.count %>
+    </span>
+<% end %>

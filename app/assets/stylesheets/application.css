@@ -1,0 +1,202 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree ./common
+ *= require_self
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 7vh;
+  background-color: rgba(255,255,255,0.5);
+}
+/*headerのheightは変数として定義したい*/
+header .logo {
+  line-height: 7vh;
+  padding-left: 30px;
+  font-size: 30px;
+  font-family: 'Abel', sans-serif;
+  float: left;
+}
+
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+
+.sawarabigothic { font-family: "Sawarabi Gothic"; }
+.wf-sawarabimincho { font-family: "Sawarabi Mincho"; }
+
+header nav ul {
+  float: right;
+  padding-right: 32px;
+}
+
+header nav ul li {
+  float: left;
+  line-height: 7vh;
+  padding-left: 30px;
+  list-style: none;
+}
+/*link_toはaで表現できる*/
+header nav ul li a{
+  color: black;
+  text-decoration: none;
+}
+.login {
+  width: 100%;
+  height: 93vh;
+  background-image: url("/image/laptop-2443739.jpg");
+  background-size: cover;
+}
+.login .login-cover {
+  width: 100%;
+  height: 93vh;
+  padding-top: 1px;
+  background: linear-gradient(to top right, rgba(0, 255, 156, 0.6), rgba(21, 255, 221, 0.8), rgba(0, 210, 255, 0.8), rgba(0, 102, 255, 0.9));
+}
+.login-form {
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 100px;
+  color: #013134;
+  padding: 30px;
+  width: 30%;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.login .field {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.login .field input {
+  width: 80%;
+  height: 30px;
+}
+
+.submit {
+  width: 20%;
+  height: 30px;
+  background-color: #44AEAF;
+  color: white;
+  border: 0px solid #44AEAF;
+}
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.nav-unshown {
+  display:none;
+}
+#nav-open {
+    display:none;
+  }
+@media screen and ( max-width:766px )
+{
+  header .logo {
+    line-height: 7vh;
+    padding-left: 30px;
+    font-size: 20px;
+    font-family: 'Abel', sans-serif;
+    float: left;
+  }
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  margin-right: 50px;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+}
