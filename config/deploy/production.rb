@@ -7,10 +7,10 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 # EC2サーバーのIP、EC2サーバーにログインするユーザー名、サーバーのロールを記述
-server '13.115.219.42', user: 'Shun-Sasano', roles: %w{app db web}
+server '13.115.219.42', user: 'ec2-user', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/authorized_keys'
+set :ssh_options, keys: '~/.ssh/AtoB.pem'
 
 
 # role-based syntax
