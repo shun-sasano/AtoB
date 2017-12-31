@@ -16,12 +16,11 @@ set :application, 'AtoB'
 
 # cloneするgitのレポジトリ
 set :repo_url, 'git@github.com:shun-sasano/AtoB.git'
-
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
 
 # deploy先のディレクトリ。
-set :deploy_to, '/var/www/rails'
+set :deploy_to, '/var/www/rails/AtoB'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
