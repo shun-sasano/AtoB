@@ -10,7 +10,7 @@
 server '13.115.219.42', user: 'Shun-Sasano', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/authorized_key'
+set :ssh_options, keys: '~/.ssh/authorized_keys'
 
 
 # role-based syntax
