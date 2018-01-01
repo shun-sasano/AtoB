@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-<!-- <p><%= link_to "いいね", article_reads_path(@article.id), method: :post%></p> -->
-<div id="like-buttons"><%= render partial: 'reads/read', locals: { article: @article, reads: @reads} %></div>
-<iframe width="560" height="315" src="<%= @article.url %>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<section class="article-show-view">
+  <div class="article-show-content">
+    <%= image_tag @article.curriculum.image_url %>
+    <p><%= @article.title %></p>
+  <!-- <p><%= link_to "いいね", article_reads_path(@article.id), method: :post%></p> -->
+  <!-- <div id="like-buttons"><%= render partial: 'reads/read', locals: { article: @article, reads: @reads} %></div> -->
+  <div class="video">
+    <iframe src="<%= @article.url %>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  </div>
+  </div>
+</section>

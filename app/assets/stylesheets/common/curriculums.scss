@@ -1,3 +1,116 @@
 // Place all the styles related to the Curriculums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.curriculums-title-view {
+  width: 100%;
+  background-color: #fafafa;
+  box-shadow: 1px 5px #eeeeee ;
+}
+
+.curriculums-title-image {
+  width: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 15%;
+  padding-right: 50px;
+  float: left;
+}
+
+.curriculums-title {
+  padding-top: 50px;
+  font-size: 40px;
+  color: #013134;
+  font-weight: lighter;
+}
+
+.curriculums-description {
+  padding-top: 20px;
+}
+
+.curriculums-table {
+  width: 100%;
+}
+
+.curriculums-table ul {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.curriculums-table ul li {
+  width: 100%;
+  font-size: 20px;
+  list-style: none;
+  border-bottom: 1px solid #013134;
+  color: #47B39D;
+  padding-bottom: 30px;
+  margin-top: 100px;
+}
+.curriculums-table ul li button {
+  font-size: 25px;
+  float: right;
+  width: 100px;
+  height: 50px;
+  border: 1px solid #013134;
+  color: #013134;
+  border-radius: 5px;
+}
+
+.curriculum-index {
+  background-color: #fafafa;
+  width: 100%;
+  height: 93vh;
+}
+
+.curriculum-index h1 {
+  padding-top: 50px;
+}
+
+.curriculum-content {
+  width: 80%;
+  margin: 0 auto;
+}
+.curriculum-card {
+  width: 30%;
+  margin-top: 50px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 5px 5px #eeeeee
+}
+.curriculum-content a {
+  text-decoration: none;
+}
+
+.curriculum-card img {
+  width: 60%;
+  padding-top: 50px;
+}
+
+.curriculum-card :hover {
+  color: #47B39D;
+}
+
+.curriculum-card-title {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: #013134;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.curriculum-card-description {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  color: #013134;
+}
+@media screen and ( max-width:766px )
+{
+  .curriculum-card {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}

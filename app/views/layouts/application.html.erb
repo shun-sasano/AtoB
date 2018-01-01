@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <div class="logo">CODE A to B</div>
+      <div class="logo"><%= link_to "CODE A to B", root_path %></div>
       <div id="nav-drawer" class="clearfix">
         <input id="nav-input" type="checkbox" class="nav-unshown">
         <label id="nav-open" for="nav-input"><span></span></label>
@@ -27,7 +27,7 @@
                 <li><%= link_to "ログイン", new_user_session_path %></li>
                 <li><%= link_to "新規登録", new_user_registration_path %></li>
               <% end %>
-              <li><%= link_to "カリキュラム", curriculum_path %></li>
+              <li><%= link_to "カリキュラム", curricula_index_path %></li>
             </ul>
           </nav>
         </div>

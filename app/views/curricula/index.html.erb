@@ -1,0 +1,14 @@
+<section class="curriculum-index">
+  <div class="curriculum-content">
+    <h1>カリキュラム一覧</h1>
+    <% @curriculums.each do |curriculum| %>
+    <%= link_to curricula_path(curriculum.id) do %>
+      <div class="curriculum-card">
+        <%= image_tag curriculum.image_url %>
+        <p class="curriculum-card-title"><%= curriculum.title %></p>
+        <p class="curriculum-card-description"><%= curriculum.description %></p>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</section>

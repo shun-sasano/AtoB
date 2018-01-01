@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'payjp'
+gem "shrine", github: 'janko-m/shrine'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record

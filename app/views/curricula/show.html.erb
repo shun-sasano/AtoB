@@ -1,0 +1,13 @@
+<section class="curriculums-title-view clearfix">
+  <%= image_tag @curriculum.image_url, class:"curriculums-title-image" %>
+  <h2 class="curriculums-title"><%= @curriculum.title %></h2>
+  <p class="curriculums-description"><%= @curriculum.description %></p>
+</section>
+
+<section class="curriculums-table">
+  <ul>
+    <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+</section>

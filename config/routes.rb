@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get '/curriculum' => "home#curriculum"
-  resources :curriculums
+  resources :curricula, only: [:show, :index]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#top'
-  resources :articles do
+  resources :articles, only: [:show, :index] do
     collection do
       post 'purchase'
     end

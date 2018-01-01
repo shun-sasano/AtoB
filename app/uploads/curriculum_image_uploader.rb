@@ -1,0 +1,2 @@
+class CurriculumImageUploader < Shrine
+end

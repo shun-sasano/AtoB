@@ -34,6 +34,25 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+  Rake::Task["deploy:check:directories"].clear
+  Rake::Task["deploy:check:linked_dirs"].clear
+
+
+  namespace :check do
+    desc '(overwrite) Check shared and release directories exist'
+    task :directories do
+      on release_roles :all do
+        execute :sudo, :mkdir, '-pv', shared_path, releases_path
+      end
+    end
+
+    task :linked_dirs do
+      next unless any? :linked_dirs
+      on release_roles :all do
+        execute :sudo, :mkdir, '-pv', linked_dirs(shared_path)
+      end
+    end
+  end
 
   desc 'Create database'
   task :db_create do

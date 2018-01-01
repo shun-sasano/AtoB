@@ -2,7 +2,7 @@ ActiveAdmin.register Article do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :title, :url, :curriculum_id, :user_id
+permit_params :title, :url, :curriculum_id, :number
 #
 # or
 #
@@ -16,7 +16,7 @@ form :html => { :enctype => "multipart/form-data" } do |f|
       f.input :title
       f.input :url
       f.input :curriculum_id
-      f.input :user_id
+      f.input :number
       f.actions
     end
   end
