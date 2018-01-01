@@ -21,6 +21,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # 保持するバージョンの個数(※後述)
 set :keep_releases, 5
+set :use_sudo, true
 
 # rubyのバージョン
 # set :rbenv_ruby, '2.3.1'
