@@ -27,5 +27,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+    <<: *default
+    database: atob_production
+    username: root #ここをrootに変更する
+    password:      #ここを空欄にする
