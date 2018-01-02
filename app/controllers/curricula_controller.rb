@@ -1,7 +1,6 @@
 class CurriculaController < InheritedResources::Base
 
   before_action :set_article, only: [:show]
-  before_action :authenticate_user!, only: [:show]
 
   # GET /articles
   # GET /articles.json
